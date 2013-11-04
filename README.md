@@ -1,1 +1,3 @@
-Práctica 8, por equipos.
+Práctica de Laboratorio #8.
+================
+
