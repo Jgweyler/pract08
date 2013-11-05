@@ -48,4 +48,22 @@ class Matrices
 			end
 		end
 	end
+
+	def x(n)
+              	matriz_resultado = @matriz
+        	for i in 0...@fil
+                	for j in 0...@col do
+				matriz_resultado[i][j] = @matriz[i][j]*n
+                	end
+        	end
+    	end
+
+    	def /(n)
+              	matriz_resultado = @matriz
+        	for i in 0...@fil
+                	for j in 0...@col do
+				matriz_resultado[i][j] = @matriz[i][j]/n
+                	end
+        	end
+    	end
 end

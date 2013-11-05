@@ -11,6 +11,7 @@ describe Matrices do
                 @mat4 = Matrices.new([[2,2],[2,2]])
                 @mat5 = Matrices.new([[3,3],[3,3]])
                 @mat6 = Matrices.new([[2,2],[2,2]])
+		@escalar = 3
 	end
 
 	describe "# Creacion y almacenamiento de matriz" do
@@ -46,6 +47,18 @@ describe Matrices do
 		it "Debe realizarse el producto de matrices" do 
 			@resultado = @mat3 * @mat4
 			@resultado == @mat5
+		end
+	end
+
+	describe "# Operaciones unarias. " do
+		it "Debe multiplicarse una matriz por un escalar" do			
+			@resultado = @mat3.x(@escalar)
+			@resultado == @mat5
+		end
+	
+		it "Debe dividirse una matriz por un escalar" do			
+			@resultado = (@mat5 /@escalar)
+			@resultado == @mat3
 		end
 	end
 end
