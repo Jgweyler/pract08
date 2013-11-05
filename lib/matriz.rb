@@ -4,26 +4,23 @@ require 'matrix'
 
 class Matrices
 	
-	attr_reader :mat, :col, :fil
+	attr_reader :matriz, :col, :fil
 
 	def initialize(matriz)
-		@mat = matriz
-		@col = matriz[0].size 
-		@fil = matriz.size	
-	end
+                @matriz = matriz
+                @col = matriz[1].size
+                @fil = matriz.size     
+        end
 
 	def +(other)
-		i = 0
-                j = 0
-                sum = @mat
-                while i < @fil                   
-                   while j < @col
-                        sum[i,j] = sum[i,j] + other.mat[i,j]
-                        j += 1
-                   end
-                   i += 1
-                   j = 0
+
+		raise ArgumentError, "No tienen las mismas dimensiones " unless @fil == other.fil && @col == other.col
+                raise TypeError "No es una matriz " unless
+                matriz_suma = @matriz
+                for i in 0...@fil
+                        for j in 0...@col do
+                                matriz_suma[i][j] = matriz_suma[i][j] + other.matriz[i][j]
+                        end
                 end
-                return sum
         end
 end

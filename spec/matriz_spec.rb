@@ -6,10 +6,11 @@ describe Matrices do
 
 	before :each do
 		@mat1 = Matrices.new([[0,0],[0,0]])
-		@mat2 = Matrices.new([[1,1],[1,1],[1,1]])
-		@mat3 = Matrices.new([[1,1],[1,1]])
-		@mat4 = Matrices.new([[2,2],[2,2]])
-		@mat5 = Matrices.new([[3,3],[3,3]])
+                @mat2 = Matrices.new([[1,1],[1,1],[1,1]])
+                @mat3 = Matrices.new([[1,1],[1,1]])
+                @mat4 = Matrices.new([[2,2],[2,2]])
+                @mat5 = Matrices.new([[3,3],[3,3]])
+                @mat6 = Matrices.new([[2,2],[2,2]])
 	end
 
 	describe "# Creacion y almacenamiento de matriz" do
@@ -32,9 +33,9 @@ describe Matrices do
 	
 	describe "# Operaciones aritmeticas" do
 		it "Debe realizarse la suma de matrices" do
-			(@mat3 + @mat4).should eq(@mat5)
-			#@resultado=@mat3+@mat4
-			#@resultado==@mat5
+			#(@mat3 + @mat4).should == @mat5
+        		@resultado = @mat3 + @mat4
+        		@resultado==@mat5
 			
 		end
 	end
