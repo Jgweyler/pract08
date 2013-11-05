@@ -38,6 +38,12 @@ describe Matrices do
         		@resultado==@mat5
 			
 		end
+		
+		it "Debe realizarse la resta de matrices" do
+        		#(@mat3 + @mat4).should == @mat5
+        		@resultado = @mat5 - @mat3
+        		@resultado == @mat4            
+		end
 	end
 end
     

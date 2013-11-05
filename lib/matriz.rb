@@ -13,7 +13,6 @@ class Matrices
         end
 
 	def +(other)
-
 		raise ArgumentError, "No tienen las mismas dimensiones " unless @fil == other.fil && @col == other.col
                 raise TypeError "No es una matriz " unless
                 matriz_suma = @matriz
@@ -23,4 +22,16 @@ class Matrices
                         end
                 end
         end
+	
+	def -(other)
+                raise ArgumentError, "No tienen las mismas dimensiones " unless @fil == other.fil && @col == other.col
+                raise TypeError "No es una matriz " unless
+                matriz_resta = @matriz
+                for i in 0...@fil
+                        for j in 0...@col do
+                                matriz_resta[i][j] = @matriz[i][j] - other.matriz[i][j]
+                        end
+                end
+                #Matrices.new(matriz_resta)
+	end
 end
