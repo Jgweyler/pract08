@@ -33,16 +33,19 @@ describe Matrices do
 	
 	describe "# Operaciones aritmeticas" do
 		it "Debe realizarse la suma de matrices" do
-			#(@mat3 + @mat4).should == @mat5
         		@resultado = @mat3 + @mat4
         		@resultado==@mat5
 			
 		end
 		
 		it "Debe realizarse la resta de matrices" do
-        		#(@mat3 + @mat4).should == @mat5
         		@resultado = @mat5 - @mat3
         		@resultado == @mat4            
+		end
+
+		it "Debe realizarse el producto de matrices" do 
+			@resultado = @mat3 * @mat4
+			@resultado == @mat5
 		end
 	end
 end

@@ -32,6 +32,20 @@ class Matrices
                                 matriz_resta[i][j] = @matriz[i][j] - other.matriz[i][j]
                         end
                 end
-                #Matrices.new(matriz_resta)
+	end
+
+	def *(other)
+		raise ArgumentError, "No tienen las dimensiones adecuadas " unless @col == other.fil
+		raise TypeError "No es una matriz " unless
+		matriz_producto = @matriz
+		for k in 0...@fil do
+			for i in 0...@fil do
+			aux= 0
+				for j in 0...@col do
+					aux += @matriz[i][j] * other.matriz[j][k]
+                                end        					
+			matriz_producto[i][k] = aux;
+			end
+		end
 	end
 end
