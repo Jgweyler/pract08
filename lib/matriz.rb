@@ -8,7 +8,7 @@ class Matrices
 
 	def initialize(matriz)
                 @matriz = matriz
-                @col = matriz[1].size
+                @col = matriz[0].size
                 @fil = matriz.size     
         end
 	
@@ -24,7 +24,7 @@ class Matrices
 			cadena+="\n "
 			i=i+1
 		end
-		     cadena
+		cadena
     	end
 
 	def +(other)
@@ -81,4 +81,18 @@ class Matrices
                 	end
         	end
     	end
+
+	def ==(other)
+		if (@fil == other.fil && @col == other.col)
+			for i in 0...@fil do
+				for j in 0...@col do
+					if(@matriz[i][j] != other.matriz[i][j])
+						return false
+					end
+				end			
+			end
+			return true
+		end
+		return false	
+	end
 end

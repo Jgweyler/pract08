@@ -67,5 +67,13 @@ describe Matrices do
 			@resultado == @mat3
 		end
 	end
+
+	describe "# Otras operaciones. " do
+		it "Se debe comparar si dos matrices son iguales" do
+			(@mat1 == @mat1).should be_true
+			(@mat1 == @mat2).should be_false
+			(@mat1 == @mat3).should be_false
+		end
+	end
 end
     
