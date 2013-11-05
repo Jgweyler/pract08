@@ -31,7 +31,13 @@ describe Matrices do
 			@mat2.col.should eq(2)
 		end
 	end
-	
+
+	describe "Convierir a caracteres" do
+		it "Debe convertir la matriz en una cadena de caracteres (to_s)" do
+        		@mat4.to_s.should eq "2 2 \n 2 2 \n "
+     		 end
+	end
+
 	describe "# Operaciones aritmeticas" do
 		it "Debe realizarse la suma de matrices" do
         		@resultado = @mat3 + @mat4

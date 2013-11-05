@@ -11,6 +11,21 @@ class Matrices
                 @col = matriz[1].size
                 @fil = matriz.size     
         end
+	
+	def to_s
+      		i=0
+		cadena= ""
+		while i<@fil
+			j=0
+			while j<@col
+				cadena+="#{matriz[i][j]} "
+			      	j=j+1
+			end 
+			cadena+="\n "
+			i=i+1
+		end
+		     cadena
+    	end
 
 	def +(other)
 		raise ArgumentError, "No tienen las mismas dimensiones " unless @fil == other.fil && @col == other.col
