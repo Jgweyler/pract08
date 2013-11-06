@@ -29,7 +29,7 @@ El fichero **Rakefile**, va a contener varios objetivos.
 
 * `spec` será la opción por defecto y hará que se ejecute el fichero _matriz_spec.rb_
 * `bin` es la opción que ejecutará el programa principal _matriz.rb_
-* `test` ejecutará el fichero de pruebas con documentación
+* `test` ejecutará el fichero de pruebas con documentación.
 * `thtml` ejecutará el fichero de pruebas en formato html. 
 
 El fichero **Gemfile** contendrá las gemas que son necesarias para la ejecución de nuestro programa.
