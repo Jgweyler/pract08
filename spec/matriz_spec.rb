@@ -15,10 +15,11 @@ describe Matrices do
 		@escalar = 3
 	end
 
-	describe "# Creacion y almacenamiento de matriz" do
+	describe "# Creacion y almacenamiento de matriz. " do
 		it "Debe tener filas" do 
 			(defined?(@mat1.fil)).should be_true
 			@mat1.fil.should eq(2)
+
 			(defined?(@mat2.fil)).should be_true
 			@mat2.fil.should eq(3)
 	
@@ -33,7 +34,7 @@ describe Matrices do
 		end
 	end
 
-	describe "# Convierir a caracteres" do
+	describe "# Operaciones de formato. " do
 		it "Debe convertir la matriz en una cadena de caracteres (to_s)" do
         		@mat4.to_s.should eq "2 2 \n 2 2 \n "
      		 end
@@ -81,4 +82,3 @@ describe Matrices do
 		end
 	end
 end
-    

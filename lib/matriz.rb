@@ -4,14 +4,16 @@ require 'matrix'
 
 class Matrices
 	
+	# Getters para el acceso a las variables
 	attr_reader :matriz, :col, :fil
-
+	
 	def initialize(matriz)
                 @matriz = matriz
                 @col = matriz[0].size
                 @fil = matriz.size     
         end
 	
+	# Método que convierte una matriz a una cadena 
 	def to_s
       		i = 0
 		cadena = ""
@@ -27,9 +29,10 @@ class Matrices
 		cadena
     	end
 
+	# Suma de dos matrices, recibe una como parámetro
 	def +(other)
 		raise ArgumentError, "No tienen las mismas dimensiones " unless @fil == other.fil && @col == other.col
-                raise TypeError "No es una matriz " unless
+                raise TypeError "No es una matriz " unless other.instance_of?Matrices
                 matriz_suma = @matriz
                 for i in 0...@fil
                         for j in 0...@col do
@@ -38,9 +41,10 @@ class Matrices
                 end
         end
 	
+	# Resta de dos matrices, recibe una como parámetro
 	def -(other)
                 raise ArgumentError, "No tienen las mismas dimensiones " unless @fil == other.fil && @col == other.col
-                raise TypeError "No es una matriz " unless
+                raise TypeError "No es una matriz " unless other.instance_of?Matrices
                 matriz_resta = @matriz
                 for i in 0...@fil
                         for j in 0...@col do
@@ -49,9 +53,10 @@ class Matrices
                 end
 	end
 
+	# Producto de dos matrices, recibe una como parámetro
 	def *(other)
 		raise ArgumentError, "No tienen las dimensiones adecuadas " unless @col == other.fil
-		raise TypeError "No es una matriz " unless
+		raise TypeError "No es una matriz " unless other.instance_of?Matrices
 		matriz_producto = @matriz
 		for k in 0...@fil do
 			for i in 0...@fil do
@@ -64,7 +69,9 @@ class Matrices
 		end
 	end
 
+	# Producto de una matriz por un escalar
 	def x(n)
+		raise ArgumentError, "No es un entero" unless n.class == Fixnum
               	matriz_resultado = @matriz
         	for i in 0...@fil
                 	for j in 0...@col do
@@ -73,7 +80,9 @@ class Matrices
         	end
     	end
 
-    	def /(n)
+	# Division de una matriz por un escalar
+    	def /(n) 
+		raise ArgumentError, "No es un entero" unless n.class == Fixnum && n != 0
               	matriz_resultado = @matriz
         	for i in 0...@fil
                 	for j in 0...@col do
@@ -82,7 +91,9 @@ class Matrices
         	end
     	end
 
+	# Compara si dos matrices son iguales
 	def ==(other)
+		raise TypeError "No es una matriz " unless other.instance_of?Matrices
 		if (@fil == other.fil && @col == other.col)
 			for i in 0...@fil do
 				for j in 0...@col do
@@ -95,7 +106,8 @@ class Matrices
 		end
 		return false	
 	end
-	
+
+	# Método que devuelve la matriz traspuesta	
 	def traspuesta
 	       	resultado = Array.new
 		for i in 0...@col
