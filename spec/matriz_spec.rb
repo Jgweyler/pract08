@@ -11,6 +11,7 @@ describe Matrices do
                 @mat4 = Matrices.new([[2,2],[2,2]])
                 @mat5 = Matrices.new([[3,3],[3,3]])
                 @mat6 = Matrices.new([[2,2],[2,2]])
+		@mat7 = Matrices.new([[1,2],[3,4]])
 		@escalar = 3
 	end
 
@@ -32,7 +33,7 @@ describe Matrices do
 		end
 	end
 
-	describe "Convierir a caracteres" do
+	describe "# Convierir a caracteres" do
 		it "Debe convertir la matriz en una cadena de caracteres (to_s)" do
         		@mat4.to_s.should eq "2 2 \n 2 2 \n "
      		 end
@@ -73,6 +74,10 @@ describe Matrices do
 			(@mat1 == @mat1).should be_true
 			(@mat1 == @mat2).should be_false
 			(@mat1 == @mat3).should be_false
+		end
+		
+		it "Se debe realizar la traspuesta de una matriz" do
+			@mat7.traspuesta.should == ([[1,3],[2,4]])
 		end
 	end
 end

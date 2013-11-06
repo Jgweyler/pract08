@@ -13,16 +13,16 @@ class Matrices
         end
 	
 	def to_s
-      		i=0
-		cadena= ""
-		while i<@fil
-			j=0
-			while j<@col
-				cadena+="#{matriz[i][j]} "
-			      	j=j+1
+      		i = 0
+		cadena = ""
+		while i < @fil
+			j = 0
+			while j < @col
+				cadena += "#{matriz[i][j]} "
+			      	j = j + 1
 			end 
-			cadena+="\n "
-			i=i+1
+			cadena += "\n "
+			i = i + 1
 		end
 		cadena
     	end
@@ -95,4 +95,15 @@ class Matrices
 		end
 		return false	
 	end
+	
+	def traspuesta
+	       	resultado = Array.new
+		for i in 0...@col
+	       		resultado[i] = Array.new
+		 	for j in 0...@fil
+		 		resultado[i][j] = matriz[j][i]
+		 	end
+	       	end
+	       	resultado
+     	end
 end
